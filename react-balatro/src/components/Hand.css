@@ -1,20 +1,18 @@
 .hand {
     display: flex;
-    gap: 10px; /* Space between cards */
+    gap: -30px; /* Overlap the cards slightly */
     justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevents wrapping */
+    align-items: flex-end;
     padding: 20px;
-    min-height: 120px; /* Adjust based on card size */
+    min-height: 140px; /* Adjust for fanning effect */
+    perspective: 600px; /* Optional: Adds slight 3D effect */
   }
   
-  .card {
-    width: 70px; /* Adjust based on your image size */
-    height: 100px;
-    transition: transform 0.2s ease-in-out;
+  .card-container {
+    transition: transform 0.3s ease-in-out;
   }
   
-  .card:hover {
-    transform: translateY(-10px); /* Lift on hover */
+  .card-container:hover {
+    transform: translateY(-15px) !important; /* Lift card on hover */
   }
   
