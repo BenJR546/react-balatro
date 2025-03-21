@@ -1,30 +1,31 @@
 export function createDeck() {
     const suits = ["hearts", "diamonds", "clubs", "spades"];
     const values = [
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "J",
-        "Q",
-        "K",
-        "A",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "jack",
+        "queen",
+        "king",
+        "ace",
     ];
 
     let deck = [];
 
     suits.forEach((suit) => {
-        values.forEach((value, index) => {
+        values.forEach((value) => {
             deck.push({
-                id: `${value}${suit}`, // Unique ID
+                id: `${value}-${suit}`,
                 value,
                 suit,
-                rank: index + 2, // Numeric rank for sorting later
+                rank: parseInt(value) || (value === "ace" ? 14 : 10),
+                image: `/cards/${value}-${suit}.png`, // Now correctly pointing to public/
             });
         });
     });
