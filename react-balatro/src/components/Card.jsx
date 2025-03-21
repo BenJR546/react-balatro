@@ -1,7 +1,12 @@
-export default function Card({ card }) {
+import "./Card.css";
+
+export default function Card({ card, faceUp = true }) {
     return (
         <div className="card">
-            <img src={card.image} alt={`${card.value}-${card.suit}`} />
+            <img
+                src={faceUp ? card.image : "/cards/card-back.png"}
+                alt={faceUp ? `${card.value} of ${card.suit}` : "Card Back"}
+            />
         </div>
     );
 }

@@ -1,18 +1,34 @@
 .hand {
     display: flex;
-    gap: -30px; /* Overlap the cards slightly */
+    gap: -30px;
     justify-content: center;
     align-items: flex-end;
     padding: 20px;
-    min-height: 140px; /* Adjust for fanning effect */
-    perspective: 600px; /* Optional: Adds slight 3D effect */
+    min-height: 140px;
+    perspective: 600px;
   }
   
   .card-container {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .card-container.fly-in {
+    animation: fly-in 0.5s ease-out;
+  }
+  
+  @keyframes fly-in {
+    from {
+      transform: translateY(-100px) scale(0.5) rotate(0deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   
   .card-container:hover {
-    transform: translateY(-15px) !important; /* Lift card on hover */
+    transform: translateY(-15px) !important;
   }
   
